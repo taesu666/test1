@@ -4,9 +4,9 @@ import './App.css';
 import Comment from './Comment';
 
 const commentsFromServer = [
-  {name: 'Inje Lee', content: 'My comment'},
-  {name: 'su', content: 'ㅋㅋㄹㅋㅋ'},
-  {name: 'ho', content: 'ㅋㅋㄹㅃㅃ'},
+  {id: 1,name: 'Inje Lee', content: 'My comment'},
+  {id: 2,name: 'su', content: 'ㅋㅋㄹㅋㅋ'},
+  {id: 3,name: 'ho', content: 'ㅋㅋㄹㅃㅃ'},
 ];
 
 var timer;
@@ -27,10 +27,21 @@ class App extends React.Component{
       if (comments.length < commentsFromServer.length){
         let index = comments.length;
         comments.push(commentsFromServer[index]);
+        if(comments.length >2){
+          comments.pop();
+        }
         this.setState({
           comments: comments
         });
-      } else if (timer) {
+        
+      // }if(comments.length >3){
+      //   comments.pop();
+      //   this.setState({
+      //     comments: comments
+      //   });
+      } 
+    
+      else if (timer) {
         clearInterval(timer);
       }
     }, 1000);
@@ -60,6 +71,8 @@ class App extends React.Component{
           {comments.map((comment, index)=>{
             return (
               <Comment
+              key={comment.id}
+              id={comment.id}
               name = {comment.name}
               content={comment.content}
               />
