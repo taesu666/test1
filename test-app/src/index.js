@@ -4,10 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import LoginControl from './ReactChapter07/LoginControl';
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+
+    <LoginControl />,
+
   document.getElementById('root')
 );
 
