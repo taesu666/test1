@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import AttenndanceBook from './Chapter08/AttendanceBook';
 import LoginControl from './ReactChapter07/LoginControl';
+import SignUp from './Chapter09/SignUp'
 
 
 ReactDOM.render(
 
-    <LoginControl />,
+    <SignUp />,
 
   document.getElementById('root')
 );
